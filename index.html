@@ -9,7 +9,8 @@
   <link rel="icon" href="assets/favicon.png" type="image/png">
   <link rel="preload" href="assets/fonts/InstrumentSerif-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="assets/styles.css">
-  <script src="assets/wave.js" defer></script>
+  <script src="assets/circle-mode.js" defer></script>
+  <script src="assets/circle-plot.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -29,19 +30,23 @@
     <figure class="wave-sheet" aria-labelledby="wave-caption">
       <div class="tape" aria-hidden="true"></div>
       <div class="plot-paper">
-        <div class="plot-heading"><span class="plot-label">Wave packet</span><output id="time-value" for="wave-time">t = 0.00</output></div>
+        <div class="plot-heading"><span class="plot-label">Circle-supported NLS</span><output id="time-value" for="wave-time" aria-live="off">t = 0.00</output></div>
+        <div class="plot-headings"><span>Wave on ℝ²</span><span>Cubic source on S¹</span></div>
         <div class="plot-drawing">
-          <img class="wave-still" src="assets/wave-still.png" width="1120" height="564" alt="A perspective mesh of a radial wave packet, with a central peak and concentric ripples.">
-          <canvas aria-label="Real part of a freely spreading radial wave packet" role="img" width="1120" height="564"></canvas>
+          <img class="wave-still" src="assets/circle-standing-wave.png" width="1120" height="440" alt="Two views of the x,y plane at time zero. The real part of the wave has a positive lobe on the right and a negative lobe on the left. The cubic source has the opposite signs and occupies only the unit circle.">
+          <canvas aria-label="Wave field in the plane and cubic source density along the unit circle" role="img" width="1120" height="440"></canvas>
         </div>
-        <div class="plot-legend"><span class="legend-line" aria-hidden="true"></span><span>i∂<sub>t</sub>ψ + Δψ = 0</span></div>
+        <div class="plot-scales">
+          <div><span class="scale-name" id="field-name">Re ψ</span><span id="field-low">−1.21</span><i class="color-scale" id="field-scale" aria-hidden="true"></i><span id="field-high">+1.21</span></div>
+          <div><span class="scale-name">Re g</span><span>−3.56</span><i class="color-scale" aria-hidden="true"></i><span>+3.56</span></div>
+        </div>
       </div>
       <div class="wave-controls" data-wave-controls hidden>
         <button id="wave-play" type="button" class="play-button" aria-label="Play wave animation"><span class="play-symbol" aria-hidden="true"></span><span class="play-label">Play</span></button>
-        <label for="wave-time" class="sr-only">Wave evolution time</label><input id="wave-time" type="range" min="0" max="0.40" step="0.001" value="0">
+        <label for="wave-time" class="sr-only">Wave evolution time</label><input id="wave-time" type="range" min="0" max="1000" step="1" value="0" aria-valuetext="t = 0.00">
         <fieldset class="plot-modes"><legend class="sr-only">Quantity to plot</legend><label><input type="radio" name="wave-mode" value="real" checked aria-label="Real part of the wave"><span>Re ψ</span></label><label><input type="radio" name="wave-mode" value="density" aria-label="Squared magnitude of the wave"><span>|ψ|²</span></label></fieldset>
       </div>
-      <figcaption id="wave-caption"><span>Free Schrödinger evolution</span><a href="research.html#wave-note">Model notes</a></figcaption>
+      <figcaption id="wave-caption"><span>Focusing case · g = −2|ψ|²ψ on S¹</span><a href="research.html#wave-note">Model notes</a></figcaption>
     </figure>
   </section>
   <section class="desk" aria-labelledby="desk-title">
@@ -49,11 +54,11 @@
     <div class="desk-grid">
       <article class="entry">
         <a class="entry-link" href="research.html">
-          <img class="entry-art" src="assets/hypersurface.png" alt="" width="920" height="340">
+          <img class="entry-art" src="assets/unit-circle.png" alt="" width="920" height="340">
           <span class="entry-kind"><i class="shape ring"></i>Research paper</span>
           <h3>Waves on a hypersurface</h3>
         </a>
-        <p>What happens when a wave feels a nonlinear interaction only along a line or a sphere?</p>
+        <p>How does a wave in the plane evolve when its nonlinear interaction is confined to a circle?</p>
       </article>
       <article class="entry">
         <a class="entry-link" href="workflow.html">

@@ -23,7 +23,7 @@
     <div class="article-hero">
       <div><p class="eyebrow"><i class="shape ring"></i>Research · Analysis of PDEs</p><h1>Waves on a<br><em>hypersurface.</em></h1>
       <p class="deck">A wave moves through space. Its nonlinear interaction takes place on a thin interface. What does that geometry allow us to prove about its evolution?</p></div>
-      <figure class="article-plate blue"><img src="assets/hypersurface.png" alt="A wireframe sphere meeting a plane along a circle." width="920" height="340"></figure>
+      <figure class="article-plate blue"><img src="assets/unit-circle.png" alt="The unit circle in the x,y plane. A short arc is highlighted to illustrate arclength measure." width="920" height="340"></figure>
     </div>
     <section class="publication">
       <div class="section-key"><span class="short-rule"></span>Preprint</div>
@@ -44,10 +44,18 @@
     </section>
     <section id="wave-note" class="text-row">
       <div class="section-key"><span class="short-rule"></span>Model notes</div>
-      <div class="reading prose"><h2>The wave on the cover</h2>
-        <p>The homepage plot follows the <em>free</em> Schrödinger equation in two dimensions. It starts with a radial Gaussian whose phase changes with the square of the radius. The rings spread out as time advances.</p>
-        <div class="formula compact">ψ(r, t) = q<sup>−1</sup> exp(−s r²/q)</div>
-        <p>Here r² = x² + y², s = 0.24 − 1.40i and q = 1 + 4ist. Choose <strong>Re ψ</strong> to see the signed oscillations or <strong>|ψ|²</strong> to see the density. Both views use the same vertical scale.</p>
+      <div class="reading prose"><h2>A wave bound to a circle</h2>
+        <p>Both panels look straight down on the same <em>x,y</em> plane. The wave extends across the plane. Its cubic source is carried by the curve S¹, the unit circle <em>x</em>² + <em>y</em>² = 1.</p>
+        <div class="formula compact">i∂<sub>t</sub>ψ + Δψ = g δ<sub>S¹</sub></div>
+        <p>The figure uses the focusing sign μ = −1. At each point on S¹, the source density is <em>g</em> = −2|ψ|²ψ evaluated there. The source in a region <em>E</em> is the integral of <em>g</em> along <em>E</em> ∩ S¹ with respect to arclength. The right panel colors the real part of <em>g</em> along the circumference.</p>
+        <p>Press <strong>Play</strong> to follow one period of an exact standing wave. The two lobes in <strong>Re ψ</strong> turn as the phase advances. Switch to <strong>|ψ|²</strong> and the wave density holds still while the source’s real part keeps turning.</p>
+        <details class="mode-details"><summary>Formula and matching condition</summary>
+          <p>In polar coordinates, ψ(t,r,θ) = e<sup>i(t+θ)</sup>Q(r), with ψ(t,0) = 0. The angular mode has index one. Write A = Q(1).</p>
+          <div class="radial-formula" aria-label="Q of r equals A times I one of r over I one of one inside the unit circle and A times K one of r over K one of one outside it">
+            <span>Q(r) =</span><div><span>A I₁(r) / I₁(1)</span><span>0 ≤ r ≤ 1</span><span>A K₁(r) / K₁(1)</span><span>r &gt; 1</span></div>
+          </div>
+          <p>The modified Bessel functions give a regular interior and a decaying exterior. The two branches agree on the circle. Taking both derivatives toward increasing <em>r</em> gives Q′(1⁺) − Q′(1⁻) = −A/[I₁(1)K₁(1)]. Choosing A = [2I₁(1)K₁(1)]<sup>−1/2</sup> makes this jump exactly −2A³, the required cubic coefficient. <a href="https://dlmf.nist.gov/10.28.E2">Bessel Wronskian</a></p>
+        </details>
         <a class="ink-link" href="index.html#wave-caption">Play with the wave</a>
       </div>
     </section>

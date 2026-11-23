@@ -29,7 +29,8 @@ The site also works under a project repository’s path because all internal lin
 | `research.html` | Paper citation, theorem summary, and wave model |
 | `workflow.html` | Lean workflow skills and a worked example |
 | `playground.html` | Proof playground layout |
-| `assets/wave.js` | Analytic wave evolution and figure controls |
+| `assets/circle-mode.js` | Exact focusing standing wave and cubic source density on the unit circle |
+| `assets/circle-plot.js` | Linked planar field and circle-source plots, animation, and controls |
 | `assets/playground.js` | Tactics, goals, hints, and puzzle feedback |
 | `assets/Playground.lean` | Three complete examples checked with Lean 4.34.1 |
 | `assets/styles.css` | Typography, colors, responsive layouts, and controls |
