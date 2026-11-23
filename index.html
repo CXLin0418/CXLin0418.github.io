@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Xilin Chen’s personal notebook on partial differential equations, integrable systems, AI, and Lean formalization.">
+  <meta name="theme-color" content="#faf9f5">
+  <title>Mathematics in motion · Xilin Chen</title>
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="preload" href="assets/fonts/InstrumentSerif-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/wave.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="masthead wrap">
+    <a class="wordmark" href="index.html" aria-label="Xilin Chen, home"><img src="assets/mark.png" width="39" height="39" alt="">Xilin Chen<span class="wordmark-period">.</span></a>
+    <nav class="nav" aria-label="Main navigation"><a href="research.html">Research</a><a href="workflow.html">Lean &amp; AI</a><a href="playground.html">Playground</a></nav>
+    <a class="scholar-button" href="https://scholar.google.com/citations?user=1OFcRwIAAAAJ&amp;hl=en"><span class="cap" aria-hidden="true"></span>Google Scholar</a>
+  </header>
+  <main id="main" class="wrap" tabindex="-1">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="short-rule" aria-hidden="true"></span>A personal math notebook</p>
+      <h1 id="hero-title">Mathematics<br><em>in motion.</em></h1>
+      <p class="intro">I’m <strong>Xilin Chen</strong>. I study partial differential equations and integrable systems at Georgetown University. I’m also interested in how AI can help take a proof from paper into Lean.</p>
+      <div class="actions"><a class="button primary" href="research.html">Explore my research</a><a class="ink-link" href="playground.html">Try a Lean puzzle</a></div>
+    </div>
+    <figure class="wave-sheet" aria-labelledby="wave-caption">
+      <div class="tape" aria-hidden="true"></div>
+      <div class="plot-paper">
+        <div class="plot-heading"><span class="plot-label">Wave packet</span><output id="time-value" for="wave-time">t = 0.00</output></div>
+        <div class="plot-drawing">
+          <img class="wave-still" src="assets/wave-still.png" width="1120" height="564" alt="A perspective mesh of a radial wave packet, with a central peak and concentric ripples.">
+          <canvas aria-label="Real part of a freely spreading radial wave packet" role="img" width="1120" height="564"></canvas>
+        </div>
+        <div class="plot-legend"><span class="legend-line" aria-hidden="true"></span><span>i∂<sub>t</sub>ψ + Δψ = 0</span></div>
+      </div>
+      <div class="wave-controls" data-wave-controls hidden>
+        <button id="wave-play" type="button" class="play-button" aria-label="Play wave animation"><span class="play-symbol" aria-hidden="true"></span><span class="play-label">Play</span></button>
+        <label for="wave-time" class="sr-only">Wave evolution time</label><input id="wave-time" type="range" min="0" max="0.40" step="0.001" value="0">
+        <fieldset class="plot-modes"><legend class="sr-only">Quantity to plot</legend><label><input type="radio" name="wave-mode" value="real" checked aria-label="Real part of the wave"><span>Re ψ</span></label><label><input type="radio" name="wave-mode" value="density" aria-label="Squared magnitude of the wave"><span>|ψ|²</span></label></fieldset>
+      </div>
+      <figcaption id="wave-caption"><span>Free Schrödinger evolution</span><a href="research.html#wave-note">Model notes</a></figcaption>
+    </figure>
+  </section>
+  <section class="desk" aria-labelledby="desk-title">
+    <h2 id="desk-title">On my desk<span class="accent">.</span></h2>
+    <div class="desk-grid">
+      <article class="entry">
+        <a class="entry-link" href="research.html">
+          <img class="entry-art" src="assets/hypersurface.png" alt="" width="920" height="340">
+          <span class="entry-kind"><i class="shape ring"></i>Research paper</span>
+          <h3>Waves on a hypersurface</h3>
+        </a>
+        <p>What happens when a wave feels a nonlinear interaction only along a line or a sphere?</p>
+      </article>
+      <article class="entry">
+        <a class="entry-link" href="workflow.html">
+          <img class="entry-art" src="assets/workflow.png" alt="" width="920" height="340">
+          <span class="entry-kind"><i class="shape square"></i>Lean &amp; AI</span>
+          <h3>From paper to Lean</h3>
+        </a>
+        <p>A set of workflow skills for tracing a paper argument all the way to a checked Lean declaration.</p>
+      </article>
+      <article class="entry">
+        <a class="entry-link" href="playground.html">
+          <img class="entry-art" src="assets/playground.png" alt="" width="920" height="340">
+          <span class="entry-kind"><i class="shape triangle"></i>Proof playground</span>
+          <h3>Your turn to prove it</h3>
+        </a>
+        <p>A few small Lean puzzles. Pick a tactic and watch what happens to the goal.</p>
+      </article>
+    </div>
+  </section>
+</main>
+  <footer class="footer wrap">
+    <div class="footer-name"><img src="assets/mark.png" width="25" height="25" alt=""><span>Xilin Chen</span><span class="footer-affiliation">Georgetown University</span></div>
+    <nav aria-label="Elsewhere"><a href="https://scholar.google.com/citations?user=1OFcRwIAAAAJ&amp;hl=en">Google Scholar</a></nav>
+  </footer>
+</body>
+</html>

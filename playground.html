@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Three guided Lean puzzles. Choose tactics, inspect the remaining goals, and download the checked source.">
+  <meta name="theme-color" content="#faf9f5">
+  <title>The proof playground · Xilin Chen</title>
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="preload" href="assets/fonts/InstrumentSerif-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/playground.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="masthead wrap">
+    <a class="wordmark" href="index.html" aria-label="Xilin Chen, home"><img src="assets/mark.png" width="39" height="39" alt="">Xilin Chen<span class="wordmark-period">.</span></a>
+    <nav class="nav" aria-label="Main navigation"><a href="research.html">Research</a><a href="workflow.html">Lean &amp; AI</a><a href="playground.html" aria-current="page">Playground</a></nav>
+    <a class="scholar-button" href="https://scholar.google.com/citations?user=1OFcRwIAAAAJ&amp;hl=en"><span class="cap" aria-hidden="true"></span>Google Scholar</a>
+  </header>
+  <main id="main" class="wrap" tabindex="-1"><nav class="crumb" aria-label="Breadcrumb"><a href="index.html">Notebook</a><span aria-hidden="true">/</span><span aria-current="page">Playground</span></nav>
+  <div class="lab-intro">
+    <p class="eyebrow"><i class="shape triangle"></i>Interactive · Lean 4</p>
+    <h1>The proof <em>playground.</em></h1>
+    <p class="deck">Choose a tactic to change the current goal. The hypotheses above the turnstile ⊢ are yours to use. The expression after it is what you need to prove.</p>
+  </div>
+  <section id="proof-lab" class="lab" aria-label="Guided proof puzzle" hidden>
+    <div class="lab-top"><div class="challenge-control"><label for="challenge">Puzzle</label><select id="challenge"></select></div><span id="progress" class="progress"></span></div>
+    <div class="lab-grid">
+      <div class="state-panel"><h2 id="state-title">Proof state</h2><pre id="context"></pre><div id="goals"></div></div>
+      <div class="choice-panel"><h2 id="choice-title">Choose a tactic</h2><div id="choices"></div><p id="feedback" class="response" role="status" aria-live="polite" aria-atomic="true"></p>
+        <div class="lab-tools"><button id="next-challenge" class="button primary small" type="button" hidden>Next puzzle</button><button id="hint" class="plain-button" type="button" aria-controls="hint-text" aria-expanded="false">Show hint</button><button id="undo" class="plain-button" type="button">Undo step</button></div>
+        <p id="hint-text" class="hint-text" hidden></p>
+      </div>
+    </div>
+    <div class="source-panel"><h2>Your proof</h2><pre><code id="proof-source"></code></pre></div>
+  </section>
+  <noscript><p class="deck">Enable JavaScript to choose tactics, or download the Lean file below to work through the examples.</p></noscript>
+  <section class="lab-foot"><div><h2>Take the proofs with you</h2><p>These are guided puzzles with preset tactics. The complete examples run in Lean 4.34.1 using only the core library.</p></div><a class="button light" download href="assets/Playground.lean">Download .lean file</a></section>
+</main>
+  <footer class="footer wrap">
+    <div class="footer-name"><img src="assets/mark.png" width="25" height="25" alt=""><span>Xilin Chen</span><span class="footer-affiliation">Georgetown University</span></div>
+    <nav aria-label="Elsewhere"><a href="https://scholar.google.com/citations?user=1OFcRwIAAAAJ&amp;hl=en">Google Scholar</a></nav>
+  </footer>
+</body>
+</html>

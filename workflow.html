@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Xilin Chen’s workflow skills for mapping mathematical papers to Lean declarations, checking proofs, and auditing their meaning.">
+  <meta name="theme-color" content="#faf9f5">
+  <title>From paper to Lean · Xilin Chen</title>
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="preload" href="assets/fonts/InstrumentSerif-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="assets/styles.css">
+  
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="masthead wrap">
+    <a class="wordmark" href="index.html" aria-label="Xilin Chen, home"><img src="assets/mark.png" width="39" height="39" alt="">Xilin Chen<span class="wordmark-period">.</span></a>
+    <nav class="nav" aria-label="Main navigation"><a href="research.html">Research</a><a href="workflow.html" aria-current="page">Lean &amp; AI</a><a href="playground.html">Playground</a></nav>
+    <a class="scholar-button" href="https://scholar.google.com/citations?user=1OFcRwIAAAAJ&amp;hl=en"><span class="cap" aria-hidden="true"></span>Google Scholar</a>
+  </header>
+  <main id="main" class="wrap" tabindex="-1"><nav class="crumb" aria-label="Breadcrumb"><a href="index.html">Notebook</a><span aria-hidden="true">/</span><span aria-current="page">Lean &amp; AI</span></nav>
+  <article class="article">
+    <div class="article-hero"><div>
+      <p class="eyebrow"><i class="shape square"></i>Lean &amp; AI · Formalization project</p>
+      <h1>From paper<br><em>to Lean.</em></h1>
+      <p class="deck">A compiler can check the theorem you wrote. How do you keep track of whether it is the theorem the paper meant?</p>
+    </div><figure class="article-plate sage"><img src="assets/workflow.png" width="920" height="340" alt="A stack of manuscript sheets, a pencil, and a diagram of lemma dependencies."></figure></div>
+    <section class="text-row">
+      <div class="section-key"><span class="short-rule"></span>Project</div>
+      <div class="reading prose"><h2>Lean workflow skills</h2>
+        <p>My formalization workflow gives an AI assistant a sequence of jobs it can do with a paper and a Lean project. It starts by pinning down the mathematical claim. Each dependency gets a place in the argument and, eventually, a place in the code.</p>
+        <p>The <code>$workflow</code> skill coordinates source review, preparation, proof development, and handoff. Two companion skills, <code>paper-extract</code> and <code>paper-target</code>, reconstruct the argument and locate the declarations a project can already use.</p>
+        <div class="stages">
+          <details open><summary>Read the argument</summary><p>Record the paper version, theorem label, hypotheses, and exact conclusion. When the paper skips an inference, mark the gap and keep its proposed repair visible.</p></details>
+          <details><summary>Map it into Lean</summary><p>Trace each supporting result to the step that uses it. Check types and applications against the project’s pinned Lean and mathlib versions, then record the target statement before starting its proof.</p></details>
+          <details><summary>Prove one obligation</summary><p>Work on a statement whose prerequisites are ready. Read Lean’s goal after each step and check that later declarations can use the finished theorem.</p></details>
+          <details><summary>Review the result</summary><p>Compare the final declaration and its assumptions with the recorded target. Inspect axiom dependencies, preserve the build evidence, and identify the next open obligation.</p></details>
+        </div>
+      </div>
+    </section>
+    <section class="text-row">
+      <div class="section-key"><span class="short-rule"></span>A small example</div>
+      <div class="reading prose"><h2>Where does a bound go?</h2>
+        <p>Suppose a paper has established <em>b = a</em> and <em>a ≤ M</em>. The next line uses <em>b ≤ M</em>. Writing out the two steps shows exactly where each hypothesis enters.</p>
+        <pre class="code-plate"><code><span class="syntax-key">example</span> (a b M : Nat) (same : b = a)
+    (bound : a ≤ M) : b ≤ M := <span class="syntax-key">by</span>
+  <span class="syntax-tactic">rw</span> [same]
+  <span class="syntax-tactic">exact</span> bound</code></pre>
+        <a class="button primary" href="playground.html#bound">Try this proof</a>
+      </div>
+    </section>
+  </article>
+</main>
+  <footer class="footer wrap">
+    <div class="footer-name"><img src="assets/mark.png" width="25" height="25" alt=""><span>Xilin Chen</span><span class="footer-affiliation">Georgetown University</span></div>
+    <nav aria-label="Elsewhere"><a href="https://scholar.google.com/citations?user=1OFcRwIAAAAJ&amp;hl=en">Google Scholar</a></nav>
+  </footer>
+</body>
+</html>
