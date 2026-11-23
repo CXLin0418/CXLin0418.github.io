@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Page not found · Xilin Chen</title>
+  <script>
+    // Forward bookmarks from the original folder after removing its duplicate files.
+    const movedPages = new Map([
+      ["/xilin-chen-website", "/"],
+      ["/xilin-chen-website/", "/"],
+      ["/xilin-chen-website/index.html", "/"],
+      ["/xilin-chen-website/research.html", "/research.html"],
+      ["/xilin-chen-website/workflow.html", "/workflow.html"],
+      ["/xilin-chen-website/playground.html", "/playground.html"]
+    ]);
+    const destination = movedPages.get(location.pathname);
+    if (destination) location.replace(destination + location.search + location.hash);
+  </script>
+  <link rel="icon" href="/assets/favicon.png">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <main class="wrap lab-intro">
+    <h1>Page not found.</h1>
+    <a class="ink-link" href="/">Visit Xilin Chen’s homepage</a>
+  </main>
+</body>
+</html>
